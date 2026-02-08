@@ -1,5 +1,7 @@
 .header{
     height:50px;
+    position:fixed;
+    z-index:1000;
 
 }
 
@@ -21,4 +23,8 @@ input::placeholder {
   color: #999;
 }
 
+} 
+.home-container{
+    margin-top:60px;
+    position:absolute;
 }

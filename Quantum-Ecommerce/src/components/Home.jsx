@@ -1,16 +1,17 @@
 import  myLogo from '../assets/image.jpeg';
+
 function Home(){
     return(
         <>
-       <div className="container-fluid my-4">
+       <div className="container-fluid home-container ">
   <div className="row g-4">
 
     <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src = "" className="card-img-top" alt="Product 1" />
+      <div className="card h-80 shadow-sm">
+        <img src = "src/assets/laptop casing.jpg" className="card-img-top" alt="Product 1" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Wireless Headphones</h6>
+          <h6 className="card-title">Laptop Casing</h6>
 
           <div className="text-warning mb-1">
             ★★★★☆ <small className="text-muted">(4.2)</small>
@@ -26,10 +27,10 @@ function Home(){
 
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product2.jpg" className="card-img-top" alt="Product 2" />
+        <img src="src/assets/laptop3.jpg" className="card-img-top" alt="Product 2" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Smart Watch</h6>
+          <h6 className="card-title">Laptop</h6>
 
           <div className="text-warning mb-1">
             ★★★★★ <small className="text-muted">(5.0)</small>
@@ -46,10 +47,10 @@ function Home(){
 
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product3.jpg" className="card-img-top" alt="Product 3" />
+        <img src="src/assets/mouse.jpg" className="card-img-top" alt="Product 3" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Bluetooth Speaker</h6>
+          <h6 className="card-title">Mouse</h6>
 
           <div className="text-warning mb-1">
             ★★★★☆ <small className="text-muted">(4.0)</small>
@@ -66,10 +67,10 @@ function Home(){
     
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product4.jpg" className="card-img-top" alt="Product 4" />
+        <img src="src/assets/latptop1.webp" className="card-img-top" alt="Product 4" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Gaming Mouse</h6>
+          <h6 className="card-title">Laptop</h6>
 
           <div className="text-warning mb-1">
             ★★★☆☆ <small className="text-muted">(3.5)</small>
@@ -86,14 +87,14 @@ function Home(){
 
   </div>
 
-   <div className="row g-4">
+     <div className="row g-4">
 
     <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="/product1.jpg" className="card-img-top" alt="Product 1" />
+      <div className="card h-80 shadow-sm">
+        <img src = "src/assets/laptop casing.jpg" className="card-img-top" alt="Product 1" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Wireless Headphones</h6>
+          <h6 className="card-title">Laptop Casing</h6>
 
           <div className="text-warning mb-1">
             ★★★★☆ <small className="text-muted">(4.2)</small>
@@ -109,10 +110,10 @@ function Home(){
 
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product2.jpg" className="card-img-top" alt="Product 2" />
+        <img src="src/assets/laptop3.jpg" className="card-img-top" alt="Product 2" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Smart Watch</h6>
+          <h6 className="card-title">Laptop</h6>
 
           <div className="text-warning mb-1">
             ★★★★★ <small className="text-muted">(5.0)</small>
@@ -129,10 +130,10 @@ function Home(){
 
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product3.jpg" className="card-img-top" alt="Product 3" />
+        <img src="src/assets/mouse.jpg" className="card-img-top" alt="Product 3" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Bluetooth Speaker</h6>
+          <h6 className="card-title">Mouse</h6>
 
           <div className="text-warning mb-1">
             ★★★★☆ <small className="text-muted">(4.0)</small>
@@ -149,10 +150,10 @@ function Home(){
     
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card h-100 shadow-sm">
-        <img src="/product4.jpg" className="card-img-top" alt="Product 4" />
+        <img src="src/assets/latptop1.webp" className="card-img-top" alt="Product 4" />
 
         <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Gaming Mouse</h6>
+          <h6 className="card-title">Laptop</h6>
 
           <div className="text-warning mb-1">
             ★★★☆☆ <small className="text-muted">(3.5)</small>
