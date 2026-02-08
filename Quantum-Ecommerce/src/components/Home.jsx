@@ -1,5 +1,5 @@
-import  myLogo from './assets/image.jpeg';
-function Card(){
+import  myLogo from '../assets/image.jpeg';
+function Home(){
     return(
         <>
        <div className="container-fluid my-4">
@@ -175,4 +175,4 @@ function Card(){
         </>
     )
 };
-export default Card;        
+export default Home;        

@@ -1,0 +1,24 @@
+.header{
+    height:50px;
+
+}
+
+@media (max-width:480px){
+.header{
+
+    font-size: 10px;
+}
+.search-btn{
+    width:50px;
+    font-size: 10px;
+    margin-left:-3px;
+}
+.search-box{
+    margin-left:-14px;
+}
+input::placeholder {
+  font-size: 10px;
+  color: #999;
+}
+
+}
