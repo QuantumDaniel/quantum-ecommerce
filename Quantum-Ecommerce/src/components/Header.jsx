@@ -1,44 +1,46 @@
 import { Link } from 'react-router-dom';
 import App from '../App.jsx'
 import myLogo from "../assets/logo.png"
-function Header(){
-    return(
-        <>
-       
-  <div className="container-fluid d-flex align-items-center flex-nowrap gap-1 bg-primary my-0 header">
+import '../App.css';
+function Header() {
+  return (
 
-    <Link className="navbar-brand d-flex align-items-center gap-2 m-0" to = "/">
-      <img src={myLogo} width="40" height="40" />
-      <span className="fw-bold text-white">QuantumShop</span>
-    </Link> 
+    <>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid bg-primary position-fixed top-0 z-3">
+          <Link className="navbar-brand" to="/"><img src={myLogo} class="img-fluid " width="40" height="40" alt="logo" /></Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link active text-white brand-name" aria-current="page" to="/">QuantumShop</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="orders">Orders</Link>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/src/assets/cart-icon.png" alt="cart-icon" height="20px" />
+                  <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
+                    3
+                  </span>
+                </a>
+              </li>
 
-    <form className="d-flex flex-grow-1 mx-3 ">
-      <input
-        className="form-control me-2 search-box"
-        type="search"
-        placeholder="Search products..."
-      />
-      <button className="btn btn-outline-black bg-white text-black search-btn">Search</button>
-    </form>
+            </ul>
+            <form className="d-flex" role="search">
+              <input className="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn me-4 btn-outline-success bg-white text-black" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
 
 
-    <ul className="navbar-nav d-flex flex-row align-items-center gap-3 m-0">
-      <li className="nav-item">
-        <Link to = "/orders" className="nav-link text-white" >Orders</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link position-relative text-white" to = "/cart">
-          Cart
-          <span className="badge  position-absolute top-1 start-100 translate-middle text-white">
-            3
-          </span>
-        </Link>
-      </li>
-    </ul>
-
-  </div>
-        </>
-    )
+    </>
+  )
 };
 
 export default Header;

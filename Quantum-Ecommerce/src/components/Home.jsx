@@ -1,179 +1,111 @@
-import  myLogo from '../assets/image.jpeg';
+import myLogo from '../assets/image.jpeg';
+import { useState } from 'react';
+import '../App.css';
 
-function Home(){
-    return(
-        <>
-       <div className="container-fluid home-container ">
-  <div className="row g-4">
+function Home() {
+  const [products, setProducts] = useState([
+    {
 
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-80 shadow-sm">
-        <img src = "src/assets/laptop casing.jpg" className="card-img-top" alt="Product 1" />
+      image: "src/assets/laptop-casing.jpg ",
+      name: "Laptop Casing",
+      rating: "★★★★☆ ",
+      ratingNumbers: "4.2",
+      price: "79.99 ",
+      id: 1
+    },
 
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop Casing</h6>
+    {
+      image: "src/assets/laptop3.jpg ",
+      name: "Laptop",
+      rating: "★★★★★☆ ",
+      ratingNumbers: "5.2",
+      price: "79.99 ",
+      id: 2
+    },
 
-          <div className="text-warning mb-1">
-            ★★★★☆ <small className="text-muted">(4.2)</small>
-          </div>
-          <h5 className="fw-bold mb-3">$79.99</h5>
+    {
+      image: "src/assets/mouse.jpg ",
+      name: "Mouse",
+      rating: "★★★☆ ",
+      ratingNumbers: " 3.2",
+      price: "79.99 ",
+      id: 3
+    },
 
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
+    {
+      image: "src/assets/latptop1.webp ",
+      name: "Laptop Casing",
+      rating: "★★★★☆ ",
+      ratingNumbers: " 4.2",
+      price: "80.99 ",
+      id: 4
+    },
+    {
+      image: "src/assets/laptop-casing.jpg ",
+      name: "Laptop Casing",
+      rating: "★★★☆ ",
+      ratingNumbers: "3.2",
+      price: "89.99 ",
+      id: 5
+    },
+
+    {
+      image: "src/assets/laptop3.jpg ",
+      name: "Laptop",
+      rating: "★★★★☆ ",
+      ratingNumbers: "4.2",
+      price: "39.99 ",
+      id: 6
+    },
+
+    {
+      image: "src/assets/mouse.jpg ",
+      name: "Mouse",
+      rating: "★★★★☆ ",
+      ratingNumbers: " 4.2",
+      price: "79.99 ",
+      id: 7
+    },
+
+    {
+      image: "src/assets/latptop1.webp ",
+      name: "Laptop",
+      rating: "★★★★☆ ",
+      ratingNumbers: " 4.2",
+      price: "49.99 ",
+      id: 8
+    }
+  ]);
+  return (
+    <>
+
+      <div className="container-fluid home-container">
+        <div className="row g-4">
+          {products.map((products) => {
+            return (
+              <div className="col-12 col-6 col-md-4 col-lg-3 col-sm-6  " key={products.id}>
+                <div className="card h-80 shadow-sm ">
+                  <img src={products.image} className="card-img-top images" alt="Product 1" />
+
+                  <div className="card-body d-flex flex-column">
+                    <h6 className="card-title">{products.name}</h6>
+
+                    <div className="text-warning mb-1">
+                      {products.rating} <small className="text-muted">({products.ratingNumbers})</small>
+                    </div>
+                    <h5 className="fw-bold mb-3">${products.price}</h5>
+
+                    <button className="btn btn-primary mt-auto w-100">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
-    </div>
-
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/laptop3.jpg" className="card-img-top" alt="Product 2" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop</h6>
-
-          <div className="text-warning mb-1">
-            ★★★★★ <small className="text-muted">(5.0)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$129.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/mouse.jpg" className="card-img-top" alt="Product 3" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Mouse</h6>
-
-          <div className="text-warning mb-1">
-            ★★★★☆ <small className="text-muted">(4.0)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$49.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-    
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/latptop1.webp" className="card-img-top" alt="Product 4" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop</h6>
-
-          <div className="text-warning mb-1">
-            ★★★☆☆ <small className="text-muted">(3.5)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$29.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-     <div className="row g-4">
-
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-80 shadow-sm">
-        <img src = "src/assets/laptop casing.jpg" className="card-img-top" alt="Product 1" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop Casing</h6>
-
-          <div className="text-warning mb-1">
-            ★★★★☆ <small className="text-muted">(4.2)</small>
-          </div>
-          <h5 className="fw-bold mb-3">$79.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/laptop3.jpg" className="card-img-top" alt="Product 2" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop</h6>
-
-          <div className="text-warning mb-1">
-            ★★★★★ <small className="text-muted">(5.0)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$129.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/mouse.jpg" className="card-img-top" alt="Product 3" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Mouse</h6>
-
-          <div className="text-warning mb-1">
-            ★★★★☆ <small className="text-muted">(4.0)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$49.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-    
-    <div className="col-6 col-md-4 col-lg-3">
-      <div className="card h-100 shadow-sm">
-        <img src="src/assets/latptop1.webp" className="card-img-top" alt="Product 4" />
-
-        <div className="card-body d-flex flex-column">
-          <h6 className="card-title">Laptop</h6>
-
-          <div className="text-warning mb-1">
-            ★★★☆☆ <small className="text-muted">(3.5)</small>
-          </div>
-
-          <h5 className="fw-bold mb-3">$29.99</h5>
-
-          <button className="btn btn-primary mt-auto w-100">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-        
-        
-        </>
-    )
+    </>
+  )
 };
 export default Home;        
