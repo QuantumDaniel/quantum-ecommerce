@@ -5,7 +5,6 @@ import '../App.css';
 function Home() {
   const [products, setProducts] = useState([
     {
-
       image: "src/assets/laptop-casing.jpg ",
       name: "Laptop Casing",
       rating: "★★★★☆ ",
@@ -76,6 +75,10 @@ function Home() {
       id: 8
     }
   ]);
+
+  function modalDis() {
+    alert('hello');
+  }
   return (
     <>
 
@@ -83,17 +86,35 @@ function Home() {
         <div className="row g-4">
           {products.map((products) => {
             return (
-              <div className="col-12 col-6 col-md-4 col-lg-3 col-sm-6  " key={products.id}>
+              <div className="col-12 col-6 col-md-4 col-lg-3 col-sm-6 px-4 " key={products.id}>
                 <div className="card h-80 shadow-sm ">
                   <img src={products.image} className="card-img-top images" alt="Product 1" />
+                  <div><span className='span-text' onClick={modalDis}>View More</span>
+                    <select className="form-select w-auto"
+                      style={{ height: "30px" }}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select></div>
 
-                  <div className="card-body d-flex flex-column">
-                    <h6 className="card-title">{products.name}</h6>
+                  <div className="col price-div mx-2"> <h5 className="fw-bold mb-3">${products.price}</h5></div>
 
-                    <div className="text-warning mb-1">
-                      {products.rating} <small className="text-muted">({products.ratingNumbers})</small>
-                    </div>
-                    <h5 className="fw-bold mb-3">${products.price}</h5>
+                </div>
+
+                <div className="card-body d-flex flex-column">
+                  <h6 className="card-title">{products.name}</h6>
+
+                  <div className="text-warning mb-1">
+                    {products.rating} <small className="text-muted">({products.ratingNumbers})</small>
+                  </div>
+                  <div className="row">
 
                     <button className="btn btn-primary mt-auto w-100">
                       Add to Cart

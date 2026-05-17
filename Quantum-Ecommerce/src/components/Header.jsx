@@ -8,7 +8,7 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid bg-primary position-fixed top-0 z-3">
-          <Link className="navbar-brand" to="/"><img src={myLogo} class="img-fluid " width="40" height="40" alt="logo" /></Link>
+          <img src={myLogo} className="img-fluid " width="40" height="40" alt="logo" />
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -18,15 +18,15 @@ function Header() {
                 <Link className="nav-link active text-white brand-name" aria-current="page" to="/">QuantumShop</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="orders">Orders</Link>
+                <Link className="nav-link text-white" to="orders" >Orders</Link>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <Link className="nav-link text-white" to="cart">
                   <img src="/src/assets/cart-icon.png" alt="cart-icon" height="20px" />
                   <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
                     3
                   </span>
-                </a>
+                </Link>
               </li>
 
             </ul>

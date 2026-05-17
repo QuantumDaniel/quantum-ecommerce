@@ -28,6 +28,13 @@ form {
 
 }
 
+.span-text {
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 5px;
+    text-decoration: underline;
+}
+
 @media (max-width:1050px) {
     form {
         width: 70%;
