@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import App from '../App.jsx'
 import myLogo from "../assets/logo.png"
 import '../App.css';
-function Header() {
+function Header({ cart, setCart }) {
+
+
   return (
 
     <>
@@ -24,7 +26,7 @@ function Header() {
                 <Link className="nav-link text-white" to="cart">
                   <img src="/src/assets/cart-icon.png" alt="cart-icon" height="20px" />
                   <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
-                    3
+                    {cart}
                   </span>
                 </Link>
               </li>
