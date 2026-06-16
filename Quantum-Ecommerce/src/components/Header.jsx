@@ -28,6 +28,7 @@ function Header({ cart, setCart }) {
                   <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
                     {cart}
                   </span>
+
                 </Link>
               </li>
 

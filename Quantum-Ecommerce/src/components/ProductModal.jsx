@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 
-const ProductModal = ({ pro, stars, closeModal }) => {
+const ProductModal = ({ pro, stars, closeModal, quantity, cartItems, setCartItems }) => {
     function decrement() {
         setCount(count - 1);
         if (count <= 1) {
@@ -112,11 +112,13 @@ const ProductModal = ({ pro, stars, closeModal }) => {
 
                                 {/* Quantity Section */}
                                 <div className="quantity-section mb-4">
-                                    <label className="section-label">Quantity:</label>
+                                    <label className="section-label">Quantity: <span>{pro.quantity}</span></label>
                                     <div className="quantity-controls">
+                                        {/*
                                         <button className="qty-btn" onClick={decrement}>
                                             −
                                         </button>
+                                        
                                         <input
                                             type="number"
                                             className="qty-input"
@@ -124,22 +126,44 @@ const ProductModal = ({ pro, stars, closeModal }) => {
                                             min="1"
                                             value={count}
                                         />
+                                        
+                                        
                                         <button className="qty-btn" onClick={increment}>
                                             +
                                         </button>
+                                        */}
+
                                     </div>
                                 </div>
 
                                 {/* Action Buttons */}
                                 <div className="action-buttons">
-                                    <button className="btn btn-primary btn-add-to-cart">
+                                    <button className="btn btn-primary btn-add-to-cart" onClick={() => {
+                                        setCartItems(
+                                            [
+                                                ...cartItems, {
+                                                    id: pro.id,
+                                                    name: pro.name,
+                                                    price: pro.price,
+                                                    quantity: pro.quantity,
+                                                    image: pro.image,
+                                                    color: '#FF6B6B',
+                                                    dimensions: '15cm x 10cm'
+
+
+                                                }
+                                            ]
+                                        )
+                                    }} >
                                         <i className="fas fa-shopping-cart me-2"></i>
                                         Add to Cart
                                     </button>
+                                    {/* Wishlist Button 
                                     <button className="btn btn-outline-secondary btn-wishlist">
                                         <i className="fas fa-heart me-2"></i>
                                         Wishlist
                                     </button>
+                                    */}
                                 </div>
 
                                 {/* Product Description */}

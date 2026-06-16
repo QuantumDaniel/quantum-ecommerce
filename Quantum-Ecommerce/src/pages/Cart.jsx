@@ -1,15 +1,27 @@
 
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import './Cart.css';
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, setCartItems, quantity }) => {
    // Sample cart items data
 
    // Calculate total price
    const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
    // Quantity array for each item
-   const quantityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+
+   //removing carrt items
+
+
+   function removeItem(value) {
+
+
+   };
+   useEffect(() => {
+
+   }, [])
 
 
    return (
@@ -19,7 +31,9 @@ const Cart = ({ cartItems }) => {
             <div className="cart-header">
                <h2 className="cart-title">Shopping Cart</h2>
                <span className="cart-item-count">({cartItems.length} items)</span>
+               {cartItems.length === 0 && <strong>Your Cart is empty, click on continue shopping to add more items</strong>}
             </div>
+
 
             {/* Cart Items */}
             <div className="cart-items-list">
@@ -70,13 +84,18 @@ const Cart = ({ cartItems }) => {
                         <div className="col-lg-2 col-md-2 col-sm-6">
                            <div className="cart-item-quantity">
                               <label className="quantity-label">Qty</label>
-                              <select className="quantity-select">
-                                 {quantityOptions.map((qty) => (
-                                    <option key={qty} value={qty} selected={qty === item.quantity}>
+                              <span><strong>{item.quantity}</strong></span>
+                              {/*
+                              <select className="quantity-select" value={item.quantity} onChange={(e) => {
+                                 setCartItems(cartItems.map((i) => i.id === item.id ? { ...i, quantity: parseInt(e.target.value) } : i))
+                              }}>
+                                 {item.quantity.map((qty) => (
+                                    <option key={qty} value={qty}>
                                        {qty}
                                     </option>
                                  ))}
                               </select>
+                              */}
                            </div>
                         </div>
 
@@ -90,7 +109,7 @@ const Cart = ({ cartItems }) => {
 
                         {/* Delete Button */}
                         <div className="col-lg-1 col-md-2 col-sm-6">
-                           <button className="btn-delete-item" title='Remove Item'>
+                           <button className="btn-delete-item" title='Remove Item' onClick={() => { setCartItems(cartItems.filter(i => i.id !== item.id)) }}>
                               <i className="fas fa-trash-alt"></i>
                            </button>
                         </div>
@@ -134,8 +153,7 @@ const Cart = ({ cartItems }) => {
 
                         <button className="btn-continue-shopping">
                            <i className="fas fa-arrow-left me-2"></i>
-                           Continue Shopping
-                        </button>
+                           <Link className="nav-link active text-blue brand-name" aria-current="page" to="/">Continue Shopping</Link>                        </button>
                      </div>
                   </div>
                </div>

@@ -6,8 +6,8 @@
 }
 
 .images {
-    height: 30vh;
-    width: 70%;
+    height: 250px;
+    width: fit-content
 }
 
 form {
