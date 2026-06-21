@@ -5,9 +5,14 @@
 
 }
 
+.color {
+    color: black !important;
+    background: green
+}
+
 .images {
     height: 250px;
-    width: fit-content
+    width: fit-content;
 }
 
 form {
