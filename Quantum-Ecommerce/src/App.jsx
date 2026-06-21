@@ -11,166 +11,184 @@ import ProductModal from './components/ProductModal';
 function App() {
 
   //product data
-  const [products, setProducts] = useState([{
-    name: 'Laptop Casing',
-    price: 129.99,
-    originalPrice: 179.99,
-    discount: 27,
-    quantityAvailable: 5,
-    quantityAvailable2: [1, 2, 3, 4, 5],
-    quantity: 1,
-    image: './laptop-casing.jpg',
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4,
-    reviews: 128,
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    rating: "★★★★☆ ",
-    ratingNumbers: "4.2",
-    id: 'product1'
-  },
+  const [products, setProducts] = useState(
 
-  {
-    name: 'Asus Laptop',
-    price: 150.99,
-    originalPrice: 180.2,
-    discount: 12,
-    quantityAvailable: 5,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4, 5],
-    image: "src/assets/laptop3.jpg ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 9,
-    reviews: 100,
-    rating: "★★★★★☆ ",
-    ratingNumbers: "5.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product2'
-  },
-  {
-    name: 'Mouse',
-    price: 129.99,
-    originalPrice: 159.55,
-    discount: 8,
-    quantityAvailable: 10,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    image: "src/assets/mouse.jpg ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4,
-    reviews: 90,
-    rating: "★★★☆ ",
-    ratingNumbers: " 3.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product3'
-  },
-  {
-    name: 'HP Laptop',
-    price: 200,
-    originalPrice: 230.99,
-    discount: 30,
-    quantityAvailable: 4,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4],
-    image: "src/assets/latptop1.webp ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4.5,
-    reviews: 120,
-    rating: "★★★★☆ ",
-    ratingNumbers: " 4.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product4'
-  },
-  {
-    name: 'Laptop Casing',
-    price: 129.99,
-    originalPrice: 179.99,
-    discount: 27,
-    quantityAvailable: 5,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4, 5],
-    image: './laptop-casing.jpg',
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4,
-    reviews: 128,
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    rating: "★★★★☆ ",
-    ratingNumbers: "4.2",
-    id: 'product5'
-  },
+    [{
+      name: 'Laptop Casing',
+      price: 129.99,
+      originalPrice: 179.99,
+      discount: 27,
+      quantityAvailable: 5,
+      quantityAvailable2: [1, 2, 3, 4, 5],
+      quantity: 1,
+      image: './laptop-casing.jpg',
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4,
+      reviews: 128,
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      rating: "★★★★☆ ",
+      ratingNumbers: "4.2",
+      id: 'product1'
+    },
 
-  {
-    name: 'Asus Laptop',
-    price: 150.99,
-    originalPrice: 180.2,
-    discount: 12,
-    quantityAvailable: 7,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4, 5, 6, 7],
-    image: "src/assets/laptop2.jpg ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 9,
-    reviews: 100,
-    rating: "★★★★★☆ ",
-    ratingNumbers: "5.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product6'
-  },
-  {
-    name: 'Mouse',
-    price: 129.99,
-    originalPrice: 159.55,
-    discount: 8,
-    quantityAvailable: 6,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3, 4, 5, 6],
-    image: "src/assets/mouse.jpg ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4,
-    reviews: 90,
-    rating: "★★★☆ ",
-    ratingNumbers: " 3.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product7'
-  },
-  {
-    name: 'HP Laptop',
-    price: 200,
-    originalPrice: 230.99,
-    discount: 30,
-    quantityAvailable: 3,
-    quantity: 1,
-    quantityAvailable2: [1, 2, 3],
-    image: "src/assets/latptop1.webp ",
-    colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
-    dimensions: ['20cm', '18cm', '8cm'],
-    rating: 4.5,
-    reviews: 120,
-    rating: "★★★★☆ ",
-    ratingNumbers: " 4.2",
-    description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
-    id: 'product8'
-  }
+    {
+      name: 'Asus Laptop',
+      price: 150.99,
+      originalPrice: 180.2,
+      discount: 12,
+      quantityAvailable: 5,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4, 5],
+      image: "src/assets/laptop3.jpg ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 9,
+      reviews: 100,
+      rating: "★★★★★☆ ",
+      ratingNumbers: "5.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product2'
+    },
+    {
+      name: 'Mouse',
+      price: 129.99,
+      originalPrice: 159.55,
+      discount: 8,
+      quantityAvailable: 10,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      image: "src/assets/mouse.jpg ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4,
+      reviews: 90,
+      rating: "★★★☆ ",
+      ratingNumbers: " 3.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product3'
+    },
+    {
+      name: 'HP Laptop',
+      price: 200,
+      originalPrice: 230.99,
+      discount: 30,
+      quantityAvailable: 4,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4],
+      image: "src/assets/latptop1.webp ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4.5,
+      reviews: 120,
+      rating: "★★★★☆ ",
+      ratingNumbers: " 4.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product4'
+    },
+    {
+      name: 'Laptop Casing',
+      price: 129.99,
+      originalPrice: 179.99,
+      discount: 27,
+      quantityAvailable: 5,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4, 5],
+      image: './laptop-casing.jpg',
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4,
+      reviews: 128,
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      rating: "★★★★☆ ",
+      ratingNumbers: "4.2",
+      id: 'product5'
+    },
 
-  ]);
+    {
+      name: 'Asus Laptop',
+      price: 150.99,
+      originalPrice: 180.2,
+      discount: 12,
+      quantityAvailable: 7,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4, 5, 6, 7],
+      image: "src/assets/laptop2.jpg ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 9,
+      reviews: 100,
+      rating: "★★★★★☆ ",
+      ratingNumbers: "5.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product6'
+    },
+    {
+      name: 'Mouse',
+      price: 129.99,
+      originalPrice: 159.55,
+      discount: 8,
+      quantityAvailable: 6,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3, 4, 5, 6],
+      image: "src/assets/mouse.jpg ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4,
+      reviews: 90,
+      rating: "★★★☆ ",
+      ratingNumbers: " 3.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product7'
+    },
+    {
+      name: 'HP Laptop',
+      price: 200,
+      originalPrice: 230.99,
+      discount: 30,
+      quantityAvailable: 3,
+      quantity: 1,
+      quantityAvailable2: [1, 2, 3],
+      image: "src/assets/latptop1.webp ",
+      colors: ['#000000', '#FFFFFF', '#FF6B6B', '#4ECDC4', '#95E1D3'],
+      dimensions: ['20cm', '18cm', '8cm'],
+      rating: 4.5,
+      reviews: 120,
+      rating: "★★★★☆ ",
+      ratingNumbers: " 4.2",
+      description: 'High-quality wireless headphones with active noise cancellation, premium sound quality, and 30-hour battery life. Perfect for music lovers and professionals.',
+      id: 'product8'
+    }
+
+    ]
+  );
+
+
+
   //Orders Data
-  const [orders, setOrders] = useState([
+  const [orders, setOrders] = useState(() => {
+    return JSON.parse(localStorage.getItem("orders")) ||
+      [
 
-  ]);
+
+      ]
+  });
 
   //console.log(orders.length)
 
   //cart Data
 
-  const [cartItems, setCartItems] = useState([
+  const [cartItems, setCartItems] = useState(() => {
+    return JSON.parse(localStorage.getItem("cartItems")) ||
+      [
 
-  ]);
+      ]
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [cartItems, orders]);
 
 
 
