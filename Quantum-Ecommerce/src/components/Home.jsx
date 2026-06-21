@@ -44,21 +44,22 @@ function Home({ openModal, products, quantity, setQuantity, quantityChange, setC
                   <div className="row">
 
                     <button className="btn btn-primary mt-auto w-100" onClick={() => {
-                      setCartItems(
-                        [
-                          ...cartItems, {
-                            id: pro.id,
-                            name: pro.name,
-                            price: pro.price,
-                            quantity: pro.quantity,
-                            image: pro.image,
-                            color: '#FF6B6B',
-                            dimensions: '15cm x 10cm'
+                      cartItems.map((item) => item.id).includes(pro.id) ? cartItems :
+                        setCartItems(
+                          [
+                            ...cartItems, {
+                              id: pro.id,
+                              name: pro.name,
+                              price: pro.price,
+                              quantity: pro.quantity,
+                              image: pro.image,
+                              color: '#FF6B6B',
+                              dimensions: '15cm x 10cm'
 
 
-                          }
-                        ]
-                      )
+                            }
+                          ]
+                        )
                     }} >
                       Add to Cart
                     </button>
