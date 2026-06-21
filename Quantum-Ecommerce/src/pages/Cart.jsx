@@ -1,10 +1,19 @@
 
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+
 import './Cart.css';
 
-const Cart = ({ cartItems, setCartItems, quantity }) => {
-   // Sample cart items data
+
+const Cart = ({ cartItems, setCartItems, quantity, orders, setOrders }) => {
+
+
+
+   const date = new Date();
+   const deliveryDate = new Date();
+
+
 
    // Calculate total price
    const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -38,7 +47,9 @@ const Cart = ({ cartItems, setCartItems, quantity }) => {
             {/* Cart Items */}
             <div className="cart-items-list">
                {cartItems.map((item) => (
+
                   <div key={item.id} className="cart-item">
+
                      <div className="row g-3 align-items-center">
                         {/* Product Image */}
                         <div className="col-lg-2 col-md-3 col-sm-4">
@@ -146,7 +157,25 @@ const Cart = ({ cartItems, setCartItems, quantity }) => {
                            <span className="total-price">${(totalPrice * 1.1).toFixed(2)}</span>
                         </div>
 
-                        <button className="btn-place-order">
+                        <button className="btn-place-order" onClick={() => {
+
+                           setOrders([
+                              ...orders, {
+                                 id: cartItems.map((item) => { return item.id }),
+                                 orderNumber: `#ORD-${Math.random()}`,
+                                 date: date.toDateString(),
+                                 status: 'Delivered',
+                                 totalAmount: (totalPrice * 1.1),
+                                 items: cartItems.map((item) => { return item }),
+                                 deliveryDate: deliveryDate.setDate(date.getDate() + 5),
+                                 trackingNumber: `TRK${Date.now()}`
+                              }
+                           ]);
+
+                           setCartItems([]);
+
+                        }} disabled={cartItems.length === 0 ? true : false}>
+
                            <i className="fas fa-check-circle me-2"></i>
                            Place Order
                         </button>
@@ -159,7 +188,7 @@ const Cart = ({ cartItems, setCartItems, quantity }) => {
                </div>
             </div>
          </div>
-      </div>
+      </div >
    );
 };
 
