@@ -10,8 +10,7 @@ import Orders from "./pages/Orders"
 import ProductModal from './components/ProductModal';
 function App() {
 
-
-
+  //product data
   const [products, setProducts] = useState([{
     name: 'Laptop Casing',
     price: 129.99,
@@ -160,7 +159,14 @@ function App() {
   }
 
   ]);
+  //Orders Data
+  const [orders, setOrders] = useState([
 
+  ]);
+
+  //console.log(orders.length)
+
+  //cart Data
 
   const [cartItems, setCartItems] = useState([
 
@@ -221,8 +227,8 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Home openModal={openModal} products={products} quantity={quantity} setQuantity={setQuantity} quantityChange={quantityChange} setCartItems={setCartItems} addCart={addCart} cartItems={cartItems} />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} quantity={quantity} />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} quantity={quantity} orders={orders} setOrders={setOrders} />} />
+          <Route path="/orders" element={<Orders orders={orders} setOrders={setOrders} />} />
         </Routes>
 
       </BrowserRouter>
