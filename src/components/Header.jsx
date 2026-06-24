@@ -25,7 +25,7 @@ function Header({ cart, setCart }) {
               </li>
               <li className="nav-item dropdown" onClick={() => { setChange('Cart') }}>
                 <Link className={`nav-link text-white ${change === 'Cart' ? 'color' : ''}`} to="cart" >
-                  <img src="/src/assets/cart-icon.png" alt="cart-icon" height="20px" />
+                  <img src="/cart-icon.png" alt="cart-icon" height="20px" />
                   <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
                     {cart}
                   </span>
