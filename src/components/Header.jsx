@@ -11,7 +11,7 @@ function Header({ cart, setCart }) {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid bg-primary position-fixed top-0 z-3">
-          <img src={myLogo} className="img-fluid " width="40" height="40" alt="logo" />
+          <img loading='lazy' src={myLogo} className="img-fluid " width="40" height="40" alt="logo" />
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -25,7 +25,7 @@ function Header({ cart, setCart }) {
               </li>
               <li className="nav-item dropdown" onClick={() => { setChange('Cart') }}>
                 <Link className={`nav-link text-white ${change === 'Cart' ? 'color' : ''}`} to="cart" >
-                  <img src="/cart-icon.png" alt="cart-icon" height="20px" />
+                  <img loading='lazy' src="/cart-icon.png" alt="cart-icon" height="20px" />
                   <span className="badge  position-absolute top-1 start-50 translate-middle text-white">
                     {cart}
                   </span>

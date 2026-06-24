@@ -64,7 +64,7 @@ const Orders = ({ orders, setOrders }) => {
                                 {order.items.map((item, index) => (
                                     <div key={index} className="order-item-row">
                                         <div className="order-item-image">
-                                            <img src={item.image} alt={item.name} />
+                                            <img src={item.image} alt={item.name} loading='lazy' />
                                         </div>
                                         <div className="order-item-details">
                                             <p className="order-item-name">{item.name}</p>
